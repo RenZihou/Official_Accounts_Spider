@@ -25,7 +25,7 @@ for i in range(0, 10):
 ```
 的循环，把全部response中的url提取出来即可，为了方便后期管理还可以将标题等也保存下来：
 ```Python
-for i in range(0,10):
+for i in range(0, 10):
     urls.append({
       'title':response_data['general_msg_list']['list'][i]['app_msg_ext_info']['title'],
       'url':response_data['general_msg_list']['list'][i]['app_msg_ext_info']['content_url']
