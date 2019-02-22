@@ -33,3 +33,50 @@ for i in range(0, 10):
 ```
 5. 如果真的走到了这一步，一切就都好办了。只需要把上述urls里的文章一片片保存就可以了，而且，这些url是永久的（不同于历史记录的url总在变），
 甚至不需要cookies就能查看。因而，总能把文章保存下来了，至于格式就根据个人需求选择了。
+
+* 附：爬虫第三步的response格式：
+> {  
+"ret":0,  
+"errmsg":"ok",【如果不是ok的话就是被封了...】  
+"msg_count":10,【发送的目录数量，一般是10】  
+"can_msg_continue":1,【1表示没有加载完，可以继续加载】  
+"general_msg_list":  
+&emsp;{"list":[  
+&emsp;&emsp;{  
+&emsp;&emsp;&emsp;"comm_msg_info":{  
+&emsp;&emsp;&emsp;&emsp;"id":1000000000,【公众号的文章编码，即xpath中的id】  
+&emsp;&emsp;&emsp;&emsp;"type":49,  
+&emsp;&emsp;&emsp;&emsp;"datetime":0000000000,【时间戳】  
+&emsp;&emsp;&emsp;&emsp;"fakeid":"0000000000",【用户对应的，每人只有一个】  
+&emsp;&emsp;&emsp;&emsp;"status":2,【状态码】  
+&emsp;&emsp;&emsp;&emsp;"content":""  
+&emsp;&emsp;&emsp;},  
+&emsp;&emsp;&emsp;"app_msg_ext_info":{  
+&emsp;&emsp;&emsp;&emsp;"title":"...",【主标题】  
+&emsp;&emsp;&emsp;&emsp;"digest":"...",【副标题】  
+&emsp;&emsp;&emsp;&emsp;"content":"",  
+&emsp;&emsp;&emsp;&emsp;"fileid":000000000,【在全部公众号中的文章id】  
+&emsp;&emsp;&emsp;&emsp;"content_url":"...",  【文章url，不变（其中的scene参数会变，但不影响文章）】  
+&emsp;&emsp;&emsp;&emsp;"source_url":"",  
+&emsp;&emsp;&emsp;&emsp;"cover":"..."【封面图片url，不变】  
+&emsp;&emsp;&emsp;&emsp;"subtype":9,  
+&emsp;&emsp;&emsp;&emsp;"is_multi":0,  
+&emsp;&emsp;&emsp;&emsp;"multi_app_msg_item_list":[],  
+&emsp;&emsp;&emsp;&emsp;"author":"...",【作者】  
+&emsp;&emsp;&emsp;&emsp;"copyright_stat":11,  
+&emsp;&emsp;&emsp;&emsp;"duration":0,  
+&emsp;&emsp;&emsp;&emsp;"del_flag":1,【1表示未被删除】  
+&emsp;&emsp;&emsp;&emsp;"item_show_type":0,  
+&emsp;&emsp;&emsp;&emsp;"audio_fileid":0,  
+&emsp;&emsp;&emsp;&emsp;"play_url":"",  
+&emsp;&emsp;&emsp;&emsp;"malicious_title_reason_id":0,  
+&emsp;&emsp;&emsp;&emsp;"malicious_content_type":0  
+&emsp;&emsp;&emsp;}  
+&emsp;&emsp;},【此处还应有9篇文章，简洁起见略】  
+&emsp;]},  
+"next_offset":20,【下一次请求起始文章，每次请求+10】  
+"video_count":0,  
+"use_video_tab":0,  
+"real_type":0,  
+"home_page_list":[]  
+}  
