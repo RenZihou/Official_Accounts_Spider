@@ -49,7 +49,7 @@ for i in range(0, 10):
 	&emsp;&emsp;{  
 	&emsp;&emsp;&emsp;"comm_msg_info":{  
 	&emsp;&emsp;&emsp;&emsp;"id":1000000000,【公众号的文章编码，即xpath中的id】  
-	&emsp;&emsp;&emsp;&emsp;"type":49,  
+	&emsp;&emsp;&emsp;&emsp;"type":49【49表示图文消息】,  
 	&emsp;&emsp;&emsp;&emsp;"datetime":0000000000,【时间戳】  
 	&emsp;&emsp;&emsp;&emsp;"fakeid":"0000000000",【用户对应的，每人只有一个】  
 	&emsp;&emsp;&emsp;&emsp;"status":2,【状态码】  
@@ -57,7 +57,7 @@ for i in range(0, 10):
 	&emsp;&emsp;&emsp;},  
 	&emsp;&emsp;&emsp;"app_msg_ext_info":{  
 	&emsp;&emsp;&emsp;&emsp;"title":"...",【主标题】  
-	&emsp;&emsp;&emsp;&emsp;"digest":"...",【副标题】  
+	&emsp;&emsp;&emsp;&emsp;"digest":"...",【摘要】  
 	&emsp;&emsp;&emsp;&emsp;"content":"",  
 	&emsp;&emsp;&emsp;&emsp;"fileid":000000000,【在全部公众号中的文章id】  
 	&emsp;&emsp;&emsp;&emsp;"content_url":"...",  【文章url，不变（其中的scene参数会变，但不影响文章）】  
@@ -134,3 +134,5 @@ data = requests.get(url, headers=headers, params=params)
 * 一些注意点：
 1. 由于历史记录的url是动态的，故可能会需要在一定时间后（原先url失效，具体多久还未测试）重新按照第二步的方法获取最新的url
 2. headers会很重要，需要包含在get方法中（不知道为什么用的是get...）（包括：cookies，offset，user-agent等等）
+
+* [参考](https://zhuanlan.zhihu.com/p/24350954)
