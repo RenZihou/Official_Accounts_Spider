@@ -132,7 +132,9 @@ params = {
 data = requests.get(url, headers=headers, params=params)
 ```
 * 一些注意点：
-1. 由于历史记录的url是动态的，故可能会需要在一定时间后（原先url失效，具体多久还未测试）重新按照第二步的方法获取最新的url
+1. appmsg_token和pass_ticket是动态的，需要在一定时间后（3.5小时）重新获取
 2. headers会很重要，需要包含在get方法中（不知道为什么用的是get...）（包括：cookies，offset，user-agent等等）
+3. 请求前十条文章时返回的是html（action=home），后续的加载均为json（action=getmsg）
+4. 防封策略：每一次加载请求之后间隔20sec
 
 * [参考](https://zhuanlan.zhihu.com/p/24350954)
